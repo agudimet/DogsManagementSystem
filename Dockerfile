@@ -7,5 +7,5 @@ RUN mvn clean package -Pprod -DskipTests
 # Runtime Stage
 FROM openjdk:11-jdk-slim
 WORKDIR /app
-COPY --from=build /app/target/DogManagementSystem-0.0.1-SNAPSHOT.jar DogManagementSystem.jar
+COPY --from=build /app/target/DogManagementSystem-0.0.1-SNAPSHOT.jar /app/DogManagementSystem.jar
 CMD ["java", "-jar", "DogManagementSystem.jar"]
